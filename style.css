@@ -106,7 +106,8 @@ textarea:not([rows]) {
 body {
     display: flex;
     flex-direction: column;
-    font-family: poppins;
+    font-family: poppins, sans-serif;
+    background-color: var(--VeryLightGray);
 }
 
 p {
@@ -133,7 +134,7 @@ p {
 
 
 .summarybold, .card h1 {
-    font-family: poppinsbold;
+    font-family: poppinsbold, sans-serif;
 }
 
 .summary section {
