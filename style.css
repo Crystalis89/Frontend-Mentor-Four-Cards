@@ -1,0 +1,225 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+    /* ### Primary */
+
+--Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+
+/* ### Neutral */
+
+--VeryDarkBlue: hsl(234, 12%, 34%);
+--GrayishBlue: hsl(229, 6%, 66%);
+--VeryLightGray: hsl(0, 0%, 98%);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(images/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: poppinsbold;
+    src: url(images/Poppins-Bold.ttf);
+}
+
+
+* {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: poppins;
+}
+
+p {
+    font-size: 0.85rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
+
+}
+.summary h1 {
+    padding: 0;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.summaryunbolded {
+    font-weight: 100;
+    padding: 10px;
+}
+
+
+.summarybold, .card h1 {
+    font-family: poppinsbold;
+}
+
+.summary section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon {
+    margin-left: auto;
+    padding: 1.5rem;
+}
+
+.card {
+    box-shadow: 3px 9px 5px 0px #DAE1EC;
+}
+
+
+.supervisor {
+    border-top: solid var(--Cyan);
+
+}
+
+.teambuilder {
+    border-top: solid var(--Red);
+    margin-bottom: 2rem;
+
+}
+
+.karma {
+    border-top: solid var(--Orange);
+
+
+}
+
+.center {
+    padding: 0;
+}
+
+.calculator{
+    border-top: solid var(--Blue);
+
+
+}
+.attribution { font-size: 11px; text-align: center; 
+    margin: 0;
+    padding: 0;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 426px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            'summary summary summary'
+            'supervisor center calculator';
+            align-items: center;
+            margin: 3rem 3rem 0 3rem;
+        }
+        .summary {
+            grid-area: summary;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    
+        .summary p {
+            width: 30rem;
+            padding: 0;
+
+        }
+   
+
+        .supervisor {
+            grid-area: supervisor;
+        }
+
+        .center {
+            grid-area: center;
+        }
+
+        .calculator {
+            grid-area: calculator;
+        }
+
+}
